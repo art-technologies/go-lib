@@ -144,6 +144,18 @@ func (tzkt *TzKT) SubscribeToTokenTransfers(account, contract, tokenID string) e
 	return tzkt.subscribe(MethodTokenTransfers, args)
 }
 
+// SubscribeToEvents - subscribe to events channel. Sends contract events.
+func (tzkt *TzKT) SubscribeToEvents(contract, tag string) error {
+	args := make(map[string]interface{})
+	if contract != "" {
+		args["contract"] = contract
+	}
+	if tag != "" {
+		args["tag"] = tag
+	}
+	return tzkt.subscribe(MethodEvents, args)
+}
+
 func (tzkt *TzKT) subscribe(channel string, args ...interface{}) error {
 	tzkt.invokationID += 1
 	msg := signalr.NewInvocation(fmt.Sprintf("%d", tzkt.invokationID), channel, args...)

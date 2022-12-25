@@ -8,6 +8,7 @@ const (
 	MethodBigMap         = "SubscribeToBigMaps"
 	MethodAccounts       = "SubscribeToAccounts"
 	MethodTokenTransfers = "SubscribeToTokenTransfers"
+	MethodEvents         = "SubscribeToEvents"
 )
 
 // Channels
