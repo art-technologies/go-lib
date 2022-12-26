@@ -160,3 +160,14 @@ type Statistics struct {
 	TotalVested       uint64    `json:"totalVested"`
 	Quote             *Quote    `json:"quote,omitempty"`
 }
+
+type Event struct {
+	Id            int         `json:"id"`
+	Level         int         `json:"level"`
+	Timestamp     time.Time   `json:"timestamp"`
+	Contract      Address     `json:"contract"`
+	CodeHash      int         `json:"codeHash"`
+	Tag           string      `json:"tag"`
+	Payload       interface{} `json:"payload,omitempty"`
+	TransactionId int64       `json:"transactionId"`
+}

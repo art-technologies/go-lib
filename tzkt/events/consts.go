@@ -19,6 +19,7 @@ const (
 	ChannelBigMap     = "bigmaps"
 	ChannelAccounts   = "accounts"
 	ChannelTransfers  = "transfers"
+	ChannelEvents     = "events"
 )
 
 // Big map tags

@@ -9,7 +9,7 @@ import (
 
 	"github.com/dipdup-net/go-lib/tzkt/events/signalr"
 
-	tzktData "github.com/dipdup-net/go-lib/tzkt/data"
+	tzktData "github.com/art-technologies/go-lib/tzkt/data"
 	"github.com/pkg/errors"
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
@@ -255,6 +255,10 @@ func parseData(channel string, data []byte) (any, error) {
 		var transfer []tzktData.Transfer
 		err := json.Unmarshal(data, &transfer)
 		return transfer, err
+	case ChannelEvents:
+		var events []tzktData.Event
+		err := json.Unmarshal(data, &events)
+		return events, err
 	default:
 		return nil, errors.Errorf("unknown channel: %s", channel)
 	}
