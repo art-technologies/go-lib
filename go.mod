@@ -1,9 +1,10 @@
-module github.com/dipdup-net/go-lib
+module github.com/art-technologies/go-lib
 
 go 1.18
 
 require (
 	github.com/dave/jennifer v1.4.1
+	github.com/dipdup-net/go-lib v0.2.25
 	github.com/ebellocchia/go-base58 v0.1.0
 	github.com/go-pg/pg/v10 v10.10.6
 	github.com/go-playground/validator/v10 v10.9.0
